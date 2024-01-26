@@ -11,9 +11,10 @@ pipeline {
             steps {
                 script{
                     def mvnTool = tool 'Maven3'
+                    "${mvnTool}/bin/mvn clean install"
                 }
 
-                sh "${mvnTool}/bin/mvn clean install"
+                
             }
         }
     }
