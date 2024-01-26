@@ -8,8 +8,8 @@ pipeline {
             }
         }
         stage("Maven clean") {
+            def mvnTool = tool 'Maven3'
             steps {
-                def mvnTool = tool 'Maven3'
                 sh "${mvnTool}/bin/mvn clean install"
             }
         }
