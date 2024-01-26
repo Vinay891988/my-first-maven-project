@@ -9,7 +9,8 @@ pipeline {
         }
         stage("Maven clean") {
             steps {
-                sh "mvn clean package"
+                def mvnTool = tool 'Maven3'
+                sh "${mvnTool}/bin/mvn clean install"
             }
         }
     }
