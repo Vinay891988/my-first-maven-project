@@ -1,0 +1,11 @@
+node('master'){
+    stage('checkout'){
+         git branch: 'main',
+         credentialsId: '',
+         url: 'https://github.com/Vinay891988/my-first-maven-project.git'
+    }
+    stage('Maven build'){
+        def mvnTool = tool 'Maven3'
+        sh "${mvnTool}/bin/mvn clean install"
+    }
+}
